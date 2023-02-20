@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wind Data Chart</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<canvas id="myChart"></canvas>
+
+	<script>
+        // Create arrays for the date, wind speed, and wind direction data
+		const dates = ["2021-01-01","2021-01-02","2021-01-03","2021-01-04"];
+		const windSpeeds = [1,2,3,4];
+		const windDirections = ["n","s","e","w"];
+
+        // Create the chart using Chart.js
+				const ctx = document.getElementById('myChart');
+				const myChart = new Chart(ctx, {
+					type: 'line',
+					data: {
+						labels: dates,
+						datasets: [{
+							label: 'Wind Speed',
+							data: windSpeeds,
+							borderColor: 'blue',
+							fill: false
+						}],
+					},
+					//represent the data of "windDirections" in the title of the tooltip with the following message "Wind Direction: ", put tooltip insinde plugins field
+                    options: {
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    title: function(context) {
+                                        return 'Wind Direction: ' + windDirections[context[0].dataIndex];
+                                    }
+                                }
+                            }
+                        }
+                    }
+				});
+	</script>
+</body>
+</html>

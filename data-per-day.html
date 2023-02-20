@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Data per day</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Weather Dashboard</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    <!-- End Logo -->
+
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="data-per-hour.html">
+          <i class="bi bi-bar-chart"></i>
+          <span>Data per hour</span>
+        </a>
+      </li><!-- Data per hour -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="data-of-three-days.html">
+          <i class="bi bi-bar-chart"></i>
+          <span>Data of three days</span>
+        </a>
+      </li><!-- Data for three days -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="data-per-month.html">
+          <i class="bi bi-bar-chart"></i>
+          <span>Data per month</span>
+        </a>
+      </li><!-- Data of a month -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <!-- Page Title -->
+    <div class="pagetitle">
+      <h1>Data per day</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Data per day</li>
+        </ol>
+      </nav>
+    </div>
+    <!-- End Page Title -->
+
+    <!--Form section-->
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+
+              <!--title of the form-->
+              <h5 class="card-title">Get data</h5>
+              
+              <!--form-->
+              <form id="data-per-day-form">
+                <!--date element-->
+                <div class="row mb-3">
+                  <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+                  <div class="col-sm-10">
+                    <input type="date" name="date" class="form-control" required>
+                  </div>
+                </div>
+                <!--type of graph-->
+                <div class="row mb-3">
+                  <label for="inputType" class="col-sm-2 col-form-label">Choose the graph</label>
+                  <div class="col-sm-10">
+                    <select class="form-select" name="field" required>
+                      <!--generate options from the following values:
+                        "temp_out","hi_temp","low_temp","out_hum","dew_pt",
+                        "wind_speed","wind_run","hi_speed",
+                        "wind_chill","heat_index","thw_index","bar","rain","rain_rate","heat_dd",
+                        "cool_dd","in_temp","in_hum","in_dew","in_heat","in_emc",
+                        "in_air_density","wind_samp","wind_tx","iss_recept","arc_int"
+                      -->
+                      <option value="temp_out">Temperature Outside</option>
+                      <option value="hi_temp">High temperature</option>
+                      <option value="low_temp">Low temperature</option>
+                      <option value="out_hum">Outside Humidity</option>
+                      <option value="dew_pt">Dew point</option>
+                      <option value="wind_speed">Wind speed</option>
+                      <option value="wind_run">Wind run</option>
+                      <option value="hi_speed">High speed</option>
+                      <option value="wind_chill">Wind chill</option>
+                      <option value="heat_index">Heat index</option>
+                      <option value="thw_index">THW index</option>
+                      <option value="bar">Bar</option>
+                      <option value="rain">Rain</option>
+                      <option value="rain_rate">Rain rate</option>
+                      <option value="heat_dd">Heat degree day</option>
+                      <option value="cool_dd">Cool degree day</option>
+                      <option value="in_temp">Inside temperature</option>
+                      <option value="in_hum">Inside humidity</option>
+                      <option value="in_dew">Inside dew</option>
+                      <option value="in_heat">Inside heat</option>
+                      <option value="in_emc">Inside EMC</option>
+                      <option value="in_air_density">Inside air density</option>
+                      <option value="wind_samp">Wind sample</option>
+                      <option value="wind_tx">Wind tx</option>
+                      <option value="iss_recept">ISS reception</option>
+                      <option value="arc_int">Arc intensity</option>
+                      
+                    </select>
+                  </div>
+                </div>
+                <!--submit-->
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!--end form section-->
+
+    <!--graphs section-->
+    <section class="section">
+      <div class="row">
+
+        <!--main column-->
+        <div class="col-lg-12">
+
+          <!--wind speed chart-->
+          <div class="card">
+            <div class="card-body">
+              <canvas id="main-chart" style="display: none;"></canvas>
+            </div>
+          </div>
+
+        </div>
+    
+      </div>
+    </section>
+
+  </main>
+  <!-- End #main -->
+
+
+  <!-- return to top -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <!-- Vendor JS Files -->
+  <!--Graph JS Files-->
+  <!--script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.0/dist/chartjs-plugin-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+
+
+  <script src="assets/js/data_per_day_graphs.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
