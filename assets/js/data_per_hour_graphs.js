@@ -2,7 +2,7 @@
 
 
 const form = document.getElementById('data-per-hour-form');
-const api = 'http://127.0.0.1:8000/';  
+const api = 'https://redcalidadaire.upiita.ipn.mx/';  
 var wind_dir_arr = [];
 var hi_dir_arr = [];
 
