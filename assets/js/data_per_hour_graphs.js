@@ -2,7 +2,7 @@
 
 
 const form = document.getElementById('data-per-hour-form');
-const api = 'https://redcalidadaire.upiita.ipn.mx/';  
+const api = 'https://redcalidadaire.upiita.ipn.mx/api/';  
 var wind_dir_arr = [];
 var hi_dir_arr = [];
 
@@ -68,17 +68,17 @@ form.addEventListener('submit',(event)=>{
 
         //iterate over the response data
         for (let i = 0; i < response.data.length; i++) {
-            //add the data for the temperature outside chart
+            //add the data for the Temperatura Exterior chart
             addData(temp_out_chart, response.data[i].date_time, response.data[i].temp_out);
-            //add the data for the high temperature chart
+            //add the data for the Temperatura Maxima chart
             addData(hi_temp_chart, response.data[i].date_time, response.data[i].hi_temp);
-            //add the data for the low temperature chart
+            //add the data for the Temperatura Minima chart
             addData(low_temp_chart, response.data[i].date_time, response.data[i].low_temp);
-            //add the data for the outside humidity chart
+            //add the data for the Humedad Exterior chart
             addData(out_hum_chart, response.data[i].date_time, response.data[i].out_hum);
-            //add the data for the wind speed chart
+            //add the data for the Velocidad del Viento chart
             addData(wind_speed_chart, response.data[i].date_time, response.data[i].wind_speed);
-            //add the data for the dew point chart
+            //add the data for the Punto de Rocío chart
             addData(dew_point_chart, response.data[i].date_time, response.data[i].dew_pt);
             //add the data for the wind chill chart
             addData(wind_chill_chart, response.data[i].date_time, response.data[i].wind_chill);
@@ -133,7 +133,7 @@ form.addEventListener('submit',(event)=>{
 
 
 //charts
-//line chart for temperature outside
+//line chart for Temperatura Exterior
 const temp_out_elem = document.getElementById('temp-out');
 const temp_out_chart = new Chart(temp_out_elem, {
     
@@ -142,7 +142,7 @@ const temp_out_chart = new Chart(temp_out_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Temperature outside',
+      label: 'Temperatura Exterior',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -158,7 +158,7 @@ const temp_out_chart = new Chart(temp_out_elem, {
 
 });
 
-//line chart for high temperature
+//line chart for Temperatura Maxima
 const hi_temp_elem = document.getElementById('hi-temp');
 const hi_temp_chart = new Chart(hi_temp_elem, {
     
@@ -167,7 +167,7 @@ const hi_temp_chart = new Chart(hi_temp_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'High temperature',
+      label: 'Temperatura Maxima',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -183,7 +183,7 @@ const hi_temp_chart = new Chart(hi_temp_elem, {
 
 });
 
-//line chart for low temperature
+//line chart for Temperatura Minima
 const low_temp_elem = document.getElementById('low-temp');
 const low_temp_chart = new Chart(low_temp_elem, {
     
@@ -192,7 +192,7 @@ const low_temp_chart = new Chart(low_temp_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Low temperature',
+      label: 'Temperatura Minima',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -208,7 +208,7 @@ const low_temp_chart = new Chart(low_temp_elem, {
 
 });
 
-//line chart for outside humidity
+//line chart for Humedad Exterior
 const out_hum_elem = document.getElementById('out-hum');
 const out_hum_chart = new Chart(out_hum_elem, {
     
@@ -217,7 +217,7 @@ const out_hum_chart = new Chart(out_hum_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Outside humidity',
+      label: 'Humedad Exterior',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -233,7 +233,7 @@ const out_hum_chart = new Chart(out_hum_elem, {
 
 });
 
-//line chart for wind speed
+//line chart for Velocidad del Viento
 const wind_speed_elem = document.getElementById('wind-speed');
 const wind_speed_chart = new Chart(wind_speed_elem, {
     
@@ -242,7 +242,7 @@ const wind_speed_chart = new Chart(wind_speed_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Wind speed',
+      label: 'Velocidad del Viento',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -258,7 +258,7 @@ const wind_speed_chart = new Chart(wind_speed_elem, {
       tooltip: {
           callbacks: {
               title: function(context) {
-                  return 'Wind Direction: ' + wind_dir_arr[context[0].dataIndex];
+                  return 'Dirección del Viento: ' + wind_dir_arr[context[0].dataIndex];
               }
           }
       }
@@ -267,7 +267,7 @@ const wind_speed_chart = new Chart(wind_speed_elem, {
 
 });
 
-//line chart for dew point
+//line chart for Punto de Rocío
 const dew_point_elem = document.getElementById('dew-point');
 const dew_point_chart = new Chart(dew_point_elem, {
     
@@ -276,7 +276,7 @@ const dew_point_chart = new Chart(dew_point_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Dew point',
+      label: 'Punto de Rocío',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -301,7 +301,7 @@ const wind_chill_chart = new Chart(wind_chill_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Wind chill',
+      label: 'Sensación térmica',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -326,7 +326,7 @@ const wind_run_chart = new Chart(wind_run_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Wind run',
+      label: 'Recorrido del Viento',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -351,7 +351,7 @@ const hi_speed_chart = new Chart(hi_speed_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'High speed',
+      label: 'Velocidad máxima',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -367,7 +367,7 @@ const hi_speed_chart = new Chart(hi_speed_elem, {
       tooltip: {
           callbacks: {
               title: function(context) {
-                  return 'Direction: ' + hi_dir_arr[context[0].dataIndex];
+                  return 'Dirección: ' + hi_dir_arr[context[0].dataIndex];
               }
           }
       }
@@ -385,7 +385,7 @@ const heat_index_chart = new Chart(heat_index_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Heat index',
+      label: 'Índice de calor',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -410,7 +410,7 @@ const thw_index_chart = new Chart(thw_index_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'THW index',
+      label: 'Índice THW',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -435,7 +435,7 @@ const barometer_chart = new Chart(barometer_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Barometer',
+      label: 'Barometro',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -460,7 +460,7 @@ const rain_chart = new Chart(rain_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Rain',
+      label: 'Lluvia',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -485,7 +485,7 @@ const rain_rate_chart = new Chart(rain_rate_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Rain rate',
+      label: 'Tasa de lluvia',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -510,7 +510,7 @@ const heating_degree_day_chart = new Chart(heating_degree_day_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Heating degree day',
+      label: 'Grado día de calefacción',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -535,7 +535,7 @@ const cooling_degree_day_chart = new Chart(cooling_degree_day_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Cooling degree day',
+      label: 'Grado día de refrigeración',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -560,7 +560,7 @@ const in_temp_chart = new Chart(in_temp_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'In temperature',
+      label: 'Temperatura interior',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -585,7 +585,7 @@ const in_hum_chart = new Chart(in_hum_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'In humidity',
+      label: 'Humedad interior',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -610,7 +610,7 @@ const in_dew_chart = new Chart(in_dew_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'In dew',
+      label: 'Rocío interior',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -635,7 +635,7 @@ const in_heat_chart = new Chart(in_heat_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'In heat',
+      label: 'Calor interior',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -660,7 +660,7 @@ const in_emc_chart = new Chart(in_emc_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'In EMC',
+      label: 'EMC interior',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -685,7 +685,7 @@ const in_air_density_chart = new Chart(in_air_density_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'In Air Density',
+      label: 'Densidad del aire interior',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -710,7 +710,7 @@ const wind_samp_chart = new Chart(wind_samp_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Wind Samp',
+      label: 'Muestreo de viento',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -735,7 +735,7 @@ const wind_tx_chart = new Chart(wind_tx_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Wind Tx',
+      label: 'Tx de viento',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -760,7 +760,7 @@ const iss_recept_chart = new Chart(iss_recept_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'ISS Recept',
+      label: 'Receptáculo ISS',
       data: [], //data for the chart
       borderWidth: 1
     }]
@@ -785,7 +785,7 @@ const arc_int_chart = new Chart(arc_int_elem, {
   data: {
     labels: [], //labels for the chart
     datasets: [{
-      label: 'Arc Int',
+      label: 'Intensidad de arco',
       data: [], //data for the chart
       borderWidth: 1
     }]

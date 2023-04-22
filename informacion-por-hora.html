@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Data per hour</title>
+  <title>Información por hora</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -26,7 +26,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <span class="d-none d-lg-block">Weather Dashboard</span>
+        <span class="d-none d-lg-block">Red de Calidad de Aire</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>
@@ -40,26 +40,26 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-heading">Pages</li>
+      <li class="nav-heading">Paginas</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data-per-day.html">
+        <a class="nav-link collapsed" href="informacion-por-dia.html">
           <i class="bi bi-bar-chart"></i>
-          <span>Data per day</span>
+          <span>Información por día</span>
         </a>
-      </li><!-- Data per day -->
+      </li><!-- Información por día -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data-of-three-days.html">
+        <a class="nav-link collapsed" href="informacion-por-tres-dias.html">
           <i class="bi bi-bar-chart"></i>
-          <span>Data of three days</span>
+          <span>Información por tres dias</span>
         </a>
       </li><!-- Data for three days -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data-per-month.html">
+        <a class="nav-link collapsed" href="informacion-por-mes.html">
           <i class="bi bi-bar-chart"></i>
-          <span>Data per month</span>
+          <span>Información por mes</span>
         </a>
       </li><!-- Data of a month -->
 
@@ -71,11 +71,11 @@
 
     <!-- Page Title -->
     <div class="pagetitle">
-      <h1>Data per hour</h1>
+      <h1>Información por hora</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Data per hour</li>
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active">Información por hora</li>
         </ol>
       </nav>
     </div>
@@ -89,13 +89,13 @@
             <div class="card-body">
 
               <!--title of the form-->
-              <h5 class="card-title">Get data</h5>
+              <h5 class="card-title">Obtener información</h5>
               
               <!--form-->
               <form id="data-per-hour-form">
                 <!--date element-->
                 <div class="row mb-3">
-                  <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+                  <label for="inputDate" class="col-sm-2 col-form-label">Fecha</label>
                   <div class="col-sm-10">
                     <input type="date" name="date" class="form-control" required>
                   </div>
@@ -128,12 +128,12 @@
                     <option value="22">22</option>
                     <option value="23">23</option>
                   </select>
-                  <label for="floatingSelect">Select an hour</label>
+                  <label for="floatingSelect">Selecciona una hora</label>
                 </div>
-                <!--submit-->
+                <!--Submit-->
                 <div class="row mb-3">
                   <div class="col-sm-10">
-                    <input type="submit" class="btn btn-primary" value="Submit">
+                    <input type="Submit" class="btn btn-primary" value="Solicitar">
                   </div>
                 </div>
               </form>
@@ -153,50 +153,50 @@
         <!--left column-->
         <div class="col-lg-6">
 
-          <!--Temperature outside chart-->
+          <!--Temperatura Exterior chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Temperature outside</h5>
+              <h5 class="card-title">Temperatura Exterior</h5>
               <canvas id="temp-out"></canvas>
             </div>
           </div>
 
-          <!--High temperature chart-->
+          <!--Temperatura Maxima chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">High Temperature</h5>
+              <h5 class="card-title">Temperatura Maxima</h5>
               <canvas id="hi-temp"></canvas>
             </div>
           </div>
 
-          <!--Low temperature chart-->
+          <!--Temperatura Minima chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Low Temperature</h5>
+              <h5 class="card-title">Temperatura Minima</h5>
               <canvas id="low-temp"></canvas>
             </div>
           </div>
 
-          <!--outside humidity chart-->
+          <!--Humedad Exterior chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Outside Humidity</h5>
+              <h5 class="card-title">Humedad Exterior</h5>
               <canvas id="out-hum"></canvas>
             </div>
           </div>
 
-          <!--wind speed chart-->
+          <!--Velocidad del Viento chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Wind Speed</h5>
+              <h5 class="card-title">Velocidad del Viento</h5>
               <canvas id="wind-speed"></canvas>
             </div>
           </div>
 
-          <!-- dew point chart-->
+          <!-- Punto de Rocío chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Dew Point</h5>
+              <h5 class="card-title">Punto de Rocío</h5>
               <canvas id="dew-point"></canvas>
             </div>
           </div>
@@ -204,7 +204,7 @@
           <!--in temperature chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">In Temperature</h5>
+              <h5 class="card-title">Temperatura interior</h5>
               <canvas id="in-temp"></canvas>
             </div>
           </div>
@@ -212,7 +212,7 @@
           <!--in humidity chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">In Humidity</h5>
+              <h5 class="card-title">Humedad interior</h5>
               <canvas id="in-hum"></canvas>
             </div>
           </div>
@@ -220,7 +220,7 @@
           <!--in dew chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">In Dew</h5>
+              <h5 class="card-title">Rocío interior</h5>
               <canvas id="in-dew"></canvas>
             </div>
           </div>
@@ -228,7 +228,7 @@
           <!--in heat chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">In Heat</h5>
+              <h5 class="card-title">Calor interior</h5>
               <canvas id="in-heat"></canvas>
             </div>
           </div>
@@ -236,7 +236,7 @@
           <!--in EMC chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">In EMC</h5>
+              <h5 class="card-title">EMC interior</h5>
               <canvas id="in-emc"></canvas>
             </div>
           </div>
@@ -244,7 +244,7 @@
           <!--in air density chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">In Air Density</h5>
+              <h5 class="card-title">Densidad del aire interior</h5>
               <canvas id="in-air-density"></canvas>
             </div>
           </div>
@@ -252,7 +252,7 @@
           <!--wind samp chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Wind Samp</h5>
+              <h5 class="card-title">Muestreo de viento</h5>
               <canvas id="wind-samp"></canvas>
             </div>
           </div>
@@ -265,7 +265,7 @@
           <!--wind run chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Wind Run</h5>
+              <h5 class="card-title">Recorrido del Viento</h5>
               <canvas id="wind-run"></canvas>
             </div>
           </div>
@@ -273,7 +273,7 @@
           <!--high speed chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">High Speed</h5>
+              <h5 class="card-title">Velocidad máxima</h5>
               <canvas id="high-speed"></canvas>
             </div>
           </div>
@@ -281,7 +281,7 @@
           <!--wind chill chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Wind Chill</h5>
+              <h5 class="card-title">Sensación térmica</h5>
               <canvas id="wind-chill"></canvas>
             </div>
           </div>
@@ -289,7 +289,7 @@
           <!--heat index chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Heat Index</h5>
+              <h5 class="card-title">Índice de calor</h5>
               <canvas id="heat-index"></canvas>
             </div>
           </div>
@@ -297,7 +297,7 @@
           <!--thw index chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">THW Index</h5>
+              <h5 class="card-title">Índice THW</h5>
               <canvas id="thw-index"></canvas>
             </div>
           </div>
@@ -305,7 +305,7 @@
           <!--bar chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Barometer</h5>
+              <h5 class="card-title">Barometro</h5>
               <canvas id="barometer"></canvas>
             </div>
           </div>
@@ -313,7 +313,7 @@
           <!--rain chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Rain</h5>
+              <h5 class="card-title">Lluvia</h5>
               <canvas id="rain"></canvas>
             </div>
           </div>
@@ -321,7 +321,7 @@
           <!--rain rate chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Rain Rate</h5>
+              <h5 class="card-title">Tasa de lluvia</h5>
               <canvas id="rain-rate"></canvas>
             </div>
           </div>
@@ -329,7 +329,7 @@
           <!--heating degree day chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Heating Degree Day</h5>
+              <h5 class="card-title">Grado día de calefacción</h5>
               <canvas id="heating-degree-day"></canvas>
             </div>
           </div>
@@ -337,7 +337,7 @@
           <!--cooling degree day chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Cooling Degree Day</h5>
+              <h5 class="card-title">Grado día de refrigeración</h5>
               <canvas id="cooling-degree-day"></canvas>
             </div>
           </div>
@@ -345,7 +345,7 @@
           <!--wind tx chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Wind Tx</h5>
+              <h5 class="card-title">Tx de viento</h5>
               <canvas id="wind-tx"></canvas>
             </div>
           </div>
@@ -353,7 +353,7 @@
           <!--iss recept chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">ISS Recept</h5>
+              <h5 class="card-title">Receptáculo ISS</h5>
               <canvas id="iss-recept"></canvas>
             </div>
           </div>
@@ -361,7 +361,7 @@
           <!--arc int chart-->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Arc Int</h5>
+              <h5 class="card-title">Intensidad de arco</h5>
               <canvas id="arc-int"></canvas>
             </div>
           </div>

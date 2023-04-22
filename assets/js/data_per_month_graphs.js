@@ -1,7 +1,35 @@
 //script to get and represent data per hour
 const form = document.getElementById('data-per-month-form');
-const api = 'https://redcalidadaire.upiita.ipn.mx/';  
+const api = 'https://redcalidadaire.upiita.ipn.mx/api/';  
 var array = [];
+const dictionary = {
+  "temp_out":"Temperatura exterior",
+  "hi_temp":"Temperatura máxima",
+  "low_temp":"Temperatura mínima",
+  "out_hum":"Humedad exterior",
+  "dew_pt":"Punto de rocío",
+  "wind_speed":"Velocidad del viento",
+  "wind_run":"Recorrido del viento",
+  "hi_speed":"Velocidad máxima del viento",
+  "wind_chill":"Sensación térmica",
+  "heat_index":"Índice de calor",
+  "thw_index":"Índice THW",
+  "bar":"Presión barométrica",
+  "rain":"Lluvia",
+  "rain_rate":"Tasa de lluvia",
+  "heat_dd":"Grados de calor",
+  "cool_dd":"Grados de frío",
+  "in_temp":"Temperatura interior",
+  "in_hum":"Humedad interior",
+  "in_dew":"Punto de rocío interior",
+  "in_heat":"Sensación térmica interior",
+  "in_emc":"EMC Interior",
+  "in_air_density":"Densidad del aire interior",
+  "wind_samp":"Muestras de viento",
+  "wind_tx":"Tx viento",
+  "iss_recept":"Receptor ISS",
+  "arc_int":"Intensidad de arco"
+}
 
 
 //listen for submit event on the <form> element
@@ -18,13 +46,14 @@ form.addEventListener('submit',(event)=>{
         data[key] = value;
     }
 
+    console.log(data);
     //axios request
     axios({
       method: 'post',
       url: api + 'data/data-per-month/',
       data:{
-        "year":data['date'].split('-')[0],
-        "month":data['date'].split('-')[1],
+        "year":data['datepicker'].split('-')[0],
+        "month":data['datepicker'].split('-')[1],
         "field":data['field'],
       }
     })
@@ -42,11 +71,11 @@ form.addEventListener('submit',(event)=>{
       if (data['field'] == 'wind_speed'){ //wind speed case
 
         //change the label of the chart in the dataset
-        main_chart.data.datasets[0].label = 'Wind Speed';
+        main_chart.data.datasets[0].label = 'Velocidad del Viento';
 
         //change the title of the chart in the tooltip plugin
         main_chart.options.plugins.tooltip.callbacks.title = function(context) {
-          return 'Wind Direction: ' + array[context[0].dataIndex];
+          return 'Dirección del Viento: ' + array[context[0].dataIndex];
         }
 
         //iterate over the response data
@@ -65,11 +94,11 @@ form.addEventListener('submit',(event)=>{
       else if (data['field'] == 'hi_speed'){  //high speed case
 
         //change the label of the chart in the dataset
-        main_chart.data.datasets[0].label = 'High Speed';
+        main_chart.data.datasets[0].label = 'Velocidad máxima del viento';
 
         //change the title of the chart in the tooltip plugin
         main_chart.options.plugins.tooltip.callbacks.title = function(context) {
-          return 'High direction: ' + array[context[0].dataIndex];
+          return 'Dirección: ' + array[context[0].dataIndex];
         }
 
         //iterate over the response data
@@ -88,11 +117,11 @@ form.addEventListener('submit',(event)=>{
       else{   //usual behaviour
 
         //change the label of the chart in the dataset
-        main_chart.data.datasets[0].label = data['field'];
+        main_chart.data.datasets[0].label = dictionary[data['field']];
 
         //change the title of the chart in the tooltip plugin
         main_chart.options.plugins.tooltip.callbacks.title = function(context) {
-          return 'Date and time: ' + array[context[0].dataIndex];
+          return 'Fecha y hora: ' + array[context[0].dataIndex];
         }
 
         //iterate over the response data

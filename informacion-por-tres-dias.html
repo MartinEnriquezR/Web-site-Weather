@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Data per month</title>
+  <title>Información por tres dias</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -26,7 +26,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <span class="d-none d-lg-block">Weather Dashboard</span>
+        <span class="d-none d-lg-block">Red de Calidad de Aire</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>
@@ -40,28 +40,28 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-heading">Pages</li>
+      <li class="nav-heading">Paginas</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data-per-hour.html">
+        <a class="nav-link collapsed" href="informacion-por-hora.html">
           <i class="bi bi-bar-chart"></i>
-          <span>Data per hour</span>
+          <span>Información por hora</span>
         </a>
-      </li><!-- Data per hour -->
+      </li><!-- Información por hora -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data-per-day.html">
+        <a class="nav-link collapsed" href="informacion-por-dia.html">
           <i class="bi bi-bar-chart"></i>
-          <span>Data per day</span>
+          <span>Información por día</span>
         </a>
-      </li><!-- Data per day -->
+      </li><!-- Información por día -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data-of-three-days.html">
+        <a class="nav-link collapsed" href="informacion-por-mes.html">
           <i class="bi bi-bar-chart"></i>
-          <span>Data of three days</span>
+          <span>Información por mes</span>
         </a>
-      </li><!-- Data of three days -->
+      </li><!-- Data of a month -->
 
     </ul>
 
@@ -71,11 +71,11 @@
 
     <!-- Page Title -->
     <div class="pagetitle">
-      <h1>Data per month</h1>
+      <h1>Información por tres dias</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Data per month</li>
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active">Información por tres dias</li>
         </ol>
       </nav>
     </div>
@@ -89,22 +89,20 @@
             <div class="card-body">
 
               <!--title of the form-->
-              <h5 class="card-title">Get data</h5>
+              <h5 class="card-title">Obtener información</h5>
               
               <!--form-->
-              <form id="data-per-month-form">
+              <form id="data-of-three-days-form">
                 <!--date element-->
                 <div class="row mb-3">
-                  <label for="month-year" class="col-sm-2 col-form-label">
-                    Select a month and year:
-                  </label>
+                  <label for="inputDate" class="col-sm-2 col-form-label">Fecha</label>
                   <div class="col-sm-10">
-                    <input type="month" name="date" class="form-control" required>
+                    <input type="date" name="date" class="form-control" required>
                   </div>
                 </div>
                 <!--type of graph-->
                 <div class="row mb-3">
-                  <label for="inputType" class="col-sm-2 col-form-label">Choose the graph</label>
+                  <label for="inputType" class="col-sm-2 col-form-label">Selecciona la información</label>
                   <div class="col-sm-10">
                     <select class="form-select" name="field" required>
                       <!--generate options from the following values:
@@ -114,40 +112,40 @@
                         "cool_dd","in_temp","in_hum","in_dew","in_heat","in_emc",
                         "in_air_density","wind_samp","wind_tx","iss_recept","arc_int"
                       -->
-                      <option value="temp_out">Temperature Outside</option>
-                      <option value="hi_temp">High temperature</option>
-                      <option value="low_temp">Low temperature</option>
-                      <option value="out_hum">Outside Humidity</option>
-                      <option value="dew_pt">Dew point</option>
-                      <option value="wind_speed">Wind speed</option>
-                      <option value="wind_run">Wind run</option>
-                      <option value="hi_speed">High speed</option>
-                      <option value="wind_chill">Wind chill</option>
-                      <option value="heat_index">Heat index</option>
-                      <option value="thw_index">THW index</option>
-                      <option value="bar">Bar</option>
-                      <option value="rain">Rain</option>
-                      <option value="rain_rate">Rain rate</option>
-                      <option value="heat_dd">Heat degree day</option>
-                      <option value="cool_dd">Cool degree day</option>
-                      <option value="in_temp">Inside temperature</option>
-                      <option value="in_hum">Inside humidity</option>
-                      <option value="in_dew">Inside dew</option>
-                      <option value="in_heat">Inside heat</option>
-                      <option value="in_emc">Inside EMC</option>
-                      <option value="in_air_density">Inside air density</option>
-                      <option value="wind_samp">Wind sample</option>
-                      <option value="wind_tx">Wind tx</option>
-                      <option value="iss_recept">ISS reception</option>
-                      <option value="arc_int">Arc intensity</option>
+                      <option value="temp_out">Temperatura Exterior</option>
+                      <option value="hi_temp">Temperatura Maxima</option>
+                      <option value="low_temp">Temperatura Minima</option>
+                      <option value="out_hum">Humedad Exterior</option>
+                      <option value="dew_pt">Punto de Rocío</option>
+                      <option value="wind_speed">Velocidad del Viento</option>
+                      <option value="wind_run">Recorrido del Viento</option>
+                      <option value="hi_speed">Velocidad máxima</option>
+                      <option value="wind_chill">Sensación térmica</option>
+                      <option value="heat_index">Índice de calor</option>
+                      <option value="thw_index">Índice THW</option>
+                      <option value="bar">Barometro</option>
+                      <option value="rain">Lluvia</option>
+                      <option value="rain_rate">Tasa de lluvia</option>
+                      <option value="heat_dd">Grado día de calefacción</option>
+                      <option value="cool_dd">Grado día de refrigeración</option>
+                      <option value="in_temp">Temperatura interna</option>
+                      <option value="in_hum">Humedad interna</option>
+                      <option value="in_dew">Rocio interno</option>
+                      <option value="in_heat">Calor interior</option>
+                      <option value="in_emc">EMC interno</option>
+                      <option value="in_air_density">Densidad del aire interior</option>
+                      <option value="wind_samp">Muestreo de viento</option>
+                      <option value="wind_tx">Tx de viento</option>
+                      <option value="iss_recept">Receptáculo ISS</option>
+                      <option value="arc_int">Intensidad de arco</option>
                       
                     </select>
                   </div>
                 </div>
-                <!--submit-->
+                <!--Submit-->
                 <div class="row mb-3">
                   <div class="col-sm-10">
-                    <input type="submit" class="btn btn-primary" value="Submit">
+                    <input type="Submit" class="btn btn-primary" value="Solicitar">
                   </div>
                 </div>
               </form>
@@ -167,7 +165,7 @@
         <!--main column-->
         <div class="col-lg-12">
 
-          <!--wind speed chart-->
+          <!--Velocidad del Viento chart-->
           <div class="card">
             <div class="card-body">
               <canvas id="main-chart" style="display: none;"></canvas>
@@ -197,7 +195,7 @@
   <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
 
 
-  <script src="assets/js/data_per_month_graphs.js"></script>
+  <script src="assets/js/data_of_three_days_graphs.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
