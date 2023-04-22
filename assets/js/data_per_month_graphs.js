@@ -46,14 +46,13 @@ form.addEventListener('submit',(event)=>{
         data[key] = value;
     }
 
-    console.log(data);
     //axios request
     axios({
       method: 'post',
       url: api + 'data/data-per-month/',
       data:{
-        "year":data['datepicker'].split('-')[0],
-        "month":data['datepicker'].split('-')[1],
+        "year":data['datepicker'].split('-')[1],
+        "month":data['datepicker'].split('-')[0],
         "field":data['field'],
       }
     })
